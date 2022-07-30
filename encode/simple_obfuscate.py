@@ -3,10 +3,8 @@ from py_compile import compile as com_pyc
 
 data = []
 
-# 'pendragon.py' adalah nama file atau file yang akan kita encode.
-# 'pendragon_hasil.py' adalah nama output filw atau file hasil.
-files = 'pendragon.py'
-output_file = 'pendragon_hasil.py'
+files = input('input your file : ')
+output_file = files.replace('.py', '_pendragon.py')
 
 # Membaca file.
 read_file = open(files).read()
@@ -32,3 +30,5 @@ com_pyc(output_file, output_file)
 
 # Menghapus file temporary.
 os.remove('temp.py')
+
+print('Output file : %s' % output_file)
